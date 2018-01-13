@@ -12,8 +12,8 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 RUN mkdir /app
 WORKDIR /app
-COPY --from=builder /go/src/github.com/jakebjorke/shipper-user-cli/shipper-user-cli .
+COPY --from=builder /go/src/github.com/jakebjorke/shipper-user-cli .
 
-ENTRYPOINT ["./user-cli"]
+ENTRYPOINT ["./shipper-user-cli"]
 
-CMD ["./user-cli"]
+CMD ["./shipper-user-cli"]
